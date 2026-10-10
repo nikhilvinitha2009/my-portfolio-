@@ -1,0 +1,1252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Nikhil C - First Year Computer Science Engineering Student Portfolio">
+
+  <title>Nikhil C | Portfolio</title>
+
+  <style>
+    /* =========================
+       BASIC SETTINGS
+    ========================== */
+
+    :root {
+      --background: #02090a;
+      --card: rgba(8, 18, 19, 0.90);
+      --cyan: #00e5f5;
+      --white: #ffffff;
+      --text: #dddddd;
+      --muted: #a9b0b2;
+      --border: rgba(255, 255, 255, 0.12);
+      --max-width: 1200px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--white);
+
+      background:
+        linear-gradient(
+          rgba(0, 20, 22, 0.70),
+          rgba(0, 7, 8, 0.95)
+        ),
+        repeating-linear-gradient(
+          0deg,
+          transparent 0px,
+          transparent 46px,
+          rgba(255,255,255,0.04) 47px
+        ),
+        repeating-linear-gradient(
+          90deg,
+          transparent 0px,
+          transparent 46px,
+          rgba(255,255,255,0.04) 47px
+        ),
+        var(--background);
+
+      background-attachment: fixed;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      height: 85px;
+
+      background: rgba(2, 7, 8, 0.96);
+
+      border-bottom: 1px solid var(--border);
+
+      backdrop-filter: blur(12px);
+    }
+
+    .navbar {
+      max-width: var(--max-width);
+      height: 100%;
+
+      margin: auto;
+      padding: 0 25px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: var(--cyan);
+
+      font-size: 28px;
+      font-weight: 800;
+
+      letter-spacing: 1px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #eeeeee;
+
+      font-size: 16px;
+
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--cyan);
+    }
+
+    .menu-button {
+      display: none;
+
+      border: none;
+      background: none;
+
+      color: white;
+
+      font-size: 30px;
+
+      cursor: pointer;
+    }
+
+    /* =========================
+       COMMON SECTION
+    ========================== */
+
+    section {
+      max-width: var(--max-width);
+
+      margin: auto;
+
+      padding: 100px 25px;
+    }
+
+    .section-title {
+      font-size: clamp(42px, 6vw, 70px);
+
+      line-height: 1.1;
+
+      margin-bottom: 50px;
+
+      font-weight: 800;
+    }
+
+    .section-title span {
+      color: var(--cyan);
+    }
+
+    .card {
+      background: var(--card);
+
+      border: 1px solid var(--border);
+
+      border-radius: 22px;
+
+      box-shadow:
+        0 0 40px rgba(0, 229, 245, 0.03);
+    }
+
+    /* =========================
+       HOME
+    ========================== */
+
+    #home {
+      min-height: calc(100vh - 85px);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+    }
+
+    .hero {
+      width: 100%;
+      max-width: 850px;
+    }
+
+    .profile {
+      width: 280px;
+      height: 280px;
+
+      margin: 0 auto 35px;
+
+      padding: 5px;
+
+      border: 3px solid var(--cyan);
+
+      border-radius: 50%;
+
+      box-shadow:
+        0 0 20px rgba(0,229,245,0.5),
+        0 0 60px rgba(0,229,245,0.15);
+
+      overflow: hidden;
+
+      background: white;
+    }
+
+    .profile img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: clamp(45px, 7vw, 75px);
+
+      line-height: 1.1;
+
+      margin-bottom: 15px;
+    }
+
+    .hero-role {
+      color: var(--cyan);
+
+      font-size: 23px;
+
+      margin-bottom: 20px;
+    }
+
+    .hero-college {
+      color: var(--muted);
+
+      font-size: 18px;
+
+      margin-bottom: 25px;
+    }
+
+    .hero-description {
+      max-width: 650px;
+
+      margin: auto;
+
+      color: #c5c5c5;
+
+      font-size: 18px;
+    }
+
+    /* SOCIAL ICONS */
+
+    .social-icons {
+      margin-top: 30px;
+
+      display: flex;
+
+      justify-content: center;
+
+      gap: 15px;
+    }
+
+    .social-icons a {
+      width: 50px;
+      height: 50px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid var(--border);
+
+      border-radius: 12px;
+
+      color: var(--cyan);
+
+      font-size: 22px;
+
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      transform: translateY(-5px);
+
+      background: rgba(0,229,245,0.1);
+
+      border-color: var(--cyan);
+
+      box-shadow:
+        0 0 20px rgba(0,229,245,0.2);
+    }
+
+    /* =========================
+       ABOUT
+    ========================== */
+
+    .about-card {
+      padding: 55px;
+
+      border-left: 7px solid var(--cyan);
+    }
+
+    .about-card h3 {
+      color: var(--cyan);
+
+      font-size: 30px;
+
+      margin-bottom: 20px;
+    }
+
+    .about-card p {
+      color: #dddddd;
+
+      font-size: 19px;
+    }
+
+    /* =========================
+       EDUCATION
+    ========================== */
+
+    .education-container {
+      display: grid;
+
+      gap: 25px;
+    }
+
+    .education-card {
+      padding: 35px;
+
+      position: relative;
+    }
+
+    .education-card::before {
+      content: "";
+
+      position: absolute;
+
+      left: 0;
+      top: 0;
+
+      width: 5px;
+      height: 100%;
+
+      background: var(--cyan);
+    }
+
+    .education-card h3 {
+      color: var(--cyan);
+
+      font-size: 25px;
+
+      margin-bottom: 10px;
+    }
+
+    .education-card h4 {
+      font-size: 20px;
+
+      margin-bottom: 8px;
+    }
+
+    .education-card p {
+      color: var(--muted);
+
+      font-size: 17px;
+    }
+
+    .score {
+      display: inline-block;
+
+      margin-top: 15px;
+
+      padding: 7px 15px;
+
+      border: 1px solid var(--cyan);
+
+      border-radius: 20px;
+
+      color: var(--cyan);
+
+      font-weight: bold;
+    }
+
+    /* =========================
+       SKILLS
+    ========================== */
+
+    .skills-card {
+      padding: 55px;
+
+      text-align: center;
+    }
+
+    .skills-card h3 {
+      color: var(--cyan);
+
+      font-size: 30px;
+
+      margin-bottom: 20px;
+    }
+
+    .skills-card p {
+      color: var(--muted);
+
+      font-size: 19px;
+
+      max-width: 750px;
+
+      margin: auto;
+    }
+
+    .learning-box {
+      margin-top: 30px;
+
+      padding: 25px;
+
+      border: 1px dashed var(--cyan);
+
+      border-radius: 15px;
+
+      color: #dddddd;
+    }
+
+    .learning-box strong {
+      color: var(--cyan);
+    }
+
+    /* =========================
+       PROJECTS
+    ========================== */
+
+    .projects-card {
+      padding: 60px;
+
+      text-align: center;
+    }
+
+    .project-icon {
+      font-size: 60px;
+
+      margin-bottom: 20px;
+    }
+
+    .projects-card h3 {
+      color: var(--cyan);
+
+      font-size: 30px;
+
+      margin-bottom: 15px;
+    }
+
+    .projects-card p {
+      max-width: 750px;
+
+      margin: auto;
+
+      color: var(--muted);
+
+      font-size: 19px;
+    }
+
+    /* =========================
+       HOBBIES
+    ========================== */
+
+    .hobby-grid {
+      display: grid;
+
+      grid-template-columns: repeat(2, 1fr);
+
+      gap: 25px;
+    }
+
+    .hobby-card {
+      padding: 40px;
+
+      text-align: center;
+
+      transition: 0.3s;
+    }
+
+    .hobby-card:hover {
+      transform: translateY(-7px);
+
+      border-color: rgba(0,229,245,0.5);
+    }
+
+    .hobby-icon {
+      font-size: 50px;
+
+      margin-bottom: 15px;
+    }
+
+    .hobby-card h3 {
+      color: var(--cyan);
+
+      font-size: 25px;
+    }
+
+    /* =========================
+       FUTURE GOALS
+    ========================== */
+
+    .future-card {
+      padding: 55px;
+
+      border-top: 5px solid var(--cyan);
+    }
+
+    .future-card h3 {
+      color: var(--cyan);
+
+      font-size: 30px;
+
+      margin-bottom: 20px;
+    }
+
+    .future-card p {
+      color: var(--muted);
+
+      font-size: 19px;
+    }
+
+    /* =========================
+       CONTACT
+    ========================== */
+
+    .contact-card {
+      padding: 50px;
+    }
+
+    .contact-item {
+      display: flex;
+
+      align-items: center;
+
+      gap: 20px;
+
+      margin: 25px 0;
+
+      font-size: 19px;
+
+      color: #dddddd;
+    }
+
+    .contact-icon {
+      width: 35px;
+
+      color: var(--cyan);
+
+      font-size: 23px;
+
+      text-align: center;
+    }
+
+    .contact-item a:hover {
+      color: var(--cyan);
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      padding: 35px 20px;
+
+      text-align: center;
+
+      color: #999999;
+
+      border-top: 1px solid var(--border);
+
+      background: rgba(0,0,0,0.4);
+    }
+
+    footer span {
+      color: var(--cyan);
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 768px) {
+
+      header {
+        height: 75px;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+
+        position: absolute;
+
+        top: 75px;
+        left: 0;
+
+        width: 100%;
+
+        flex-direction: column;
+
+        gap: 0;
+
+        background: rgba(2,7,8,0.98);
+
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-links li {
+        border-top: 1px solid var(--border);
+      }
+
+      .nav-links a {
+        display: block;
+
+        padding: 16px 25px;
+      }
+
+      section {
+        padding: 75px 20px;
+      }
+
+      .profile {
+        width: 230px;
+        height: 230px;
+      }
+
+      .about-card,
+      .skills-card,
+      .projects-card,
+      .future-card,
+      .contact-card {
+        padding: 30px;
+      }
+
+      .hobby-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-item {
+        font-size: 16px;
+
+        align-items: flex-start;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <header>
+
+    <nav class="navbar">
+
+      <a href="#home" class="logo">
+        Nikhil C
+      </a>
+
+      <button
+        class="menu-button"
+        id="menuButton"
+        aria-label="Open navigation menu">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks">
+
+        <li>
+          <a href="#home">Home</a>
+        </li>
+
+        <li>
+          <a href="#about">About</a>
+        </li>
+
+        <li>
+          <a href="#education">Education</a>
+        </li>
+
+        <li>
+          <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+          <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+          <a href="#hobbies">Hobbies</a>
+        </li>
+
+        <li>
+          <a href="#contact">Contact</a>
+        </li>
+
+      </ul>
+
+    </nav>
+
+  </header>
+
+
+  <main>
+
+    <!-- =========================
+         HOME
+    ========================== -->
+
+    <section id="home">
+
+      <div class="hero">
+
+        <!--
+          Replace profile.jpg with your own photo.
+        -->
+
+        <div class="profile">
+
+          <img
+            src="profile.jpg"
+            alt="Nikhil C">
+
+        </div>
+
+        <h1>
+          Nikhil C
+        </h1>
+
+        <div class="hero-role">
+          First Year Engineering Student
+        </div>
+
+        <div class="hero-college">
+          M. Kumarasamy College of Engineering, Karur
+        </div>
+
+        <p class="hero-description">
+
+          I am a first-year Computer Science Engineering
+          student who is interested in learning new things,
+          exploring technology and developing my skills
+          for the future.
+
+        </p>
+
+
+        <!-- SOCIAL ICONS -->
+
+        <div class="social-icons">
+
+          <!-- GitHub -->
+          <a
+            href="https://github.com/"
+            target="_blank"
+            title="GitHub">
+            ◉
+          </a>
+
+          <!-- LinkedIn -->
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank"
+            title="LinkedIn">
+            in
+          </a>
+
+          <!-- Email -->
+          <a
+            href="mailto:nikhilvinitha2009@gmail.com"
+            title="Email">
+            ✉
+          </a>
+
+          <!-- Phone -->
+          <a
+            href="tel:7200656720"
+            title="Phone">
+            ☎
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT ME
+    ========================== -->
+
+    <section id="about">
+
+      <h2 class="section-title">
+        About <span>Me</span>
+      </h2>
+
+      <div class="card about-card">
+
+        <h3>
+          Who I Am
+        </h3>
+
+        <p>
+
+          I am a first-year engineering student at
+          M. Kumarasamy College of Engineering, Karur.
+
+          I am very interested in finding and learning
+          something new. I enjoy exploring new ideas,
+          learning new things and improving my knowledge.
+
+          I am currently beginning my journey in Computer
+          Science Engineering and looking forward to
+          developing my technical skills throughout my
+          engineering journey.
+
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         EDUCATION
+    ========================== -->
+
+    <section id="education">
+
+      <h2 class="section-title">
+        My <span>Education</span>
+      </h2>
+
+
+      <div class="education-container">
+
+
+        <!-- COLLEGE -->
+
+        <div class="card education-card">
+
+          <h3>
+            Bachelor of Engineering
+          </h3>
+
+          <h4>
+            Computer Science and Engineering
+          </h4>
+
+          <p>
+            M. Kumarasamy College of Engineering,
+            Karur
+          </p>
+
+          <p>
+            Currently pursuing — First Year
+          </p>
+
+        </div>
+
+
+        <!-- 12TH -->
+
+        <div class="card education-card">
+
+          <h3>
+            Higher Secondary Education — 12th
+          </h3>
+
+          <h4>
+            Government Model School
+          </h4>
+
+          <p>
+            Namakkal District
+          </p>
+
+          <span class="score">
+            Score: 89.5%
+          </span>
+
+        </div>
+
+
+        <!-- 10TH -->
+
+        <div class="card education-card">
+
+          <h3>
+            Secondary Education — 10th
+          </h3>
+
+          <h4>
+            Government Model School
+          </h4>
+
+          <p>
+            Namakkal District
+          </p>
+
+          <span class="score">
+            Score: 94%
+          </span>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section id="skills">
+
+      <h2 class="section-title">
+        My <span>Skills</span>
+      </h2>
+
+
+      <div class="card skills-card">
+
+        <h3>
+          Currently Learning & Developing
+        </h3>
+
+        <p>
+
+          As a first-year Computer Science Engineering
+          student, I am currently developing my technical
+          skills and exploring different areas of Computer
+          Science.
+
+          I am interested in learning new technologies
+          and improving my skills step by step.
+
+        </p>
+
+
+        <div class="learning-box">
+
+          <strong>
+            My Goal:
+          </strong>
+
+          Build strong technical skills during my
+          engineering journey and apply what I learn
+          through practical projects.
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section id="projects">
+
+      <h2 class="section-title">
+        My <span>Projects</span>
+      </h2>
+
+
+      <div class="card projects-card">
+
+        <div class="project-icon">
+          🚀
+        </div>
+
+        <h3>
+          Projects Coming Soon
+        </h3>
+
+        <p>
+
+          I am currently learning and developing my
+          technical skills.
+
+          I plan to build interesting and useful projects
+          as I progress through my engineering journey.
+
+          This section will be updated with my projects
+          in the future.
+
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         HOBBIES
+    ========================== -->
+
+    <section id="hobbies">
+
+      <h2 class="section-title">
+        My <span>Hobbies</span>
+      </h2>
+
+
+      <div class="hobby-grid">
+
+
+        <div class="card hobby-card">
+
+          <div class="hobby-icon">
+            ⚽
+          </div>
+
+          <h3>
+            Playing Football
+          </h3>
+
+          <p>
+            I enjoy playing football in my free time.
+          </p>
+
+        </div>
+
+
+        <div class="card hobby-card">
+
+          <div class="hobby-icon">
+            🎧
+          </div>
+
+          <h3>
+            Listening to Music
+          </h3>
+
+          <p>
+            Listening to music is one of my favourite
+            ways to relax and enjoy my free time.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         FUTURE GOALS
+    ========================== -->
+
+    <section id="future">
+
+      <h2 class="section-title">
+        My <span>Future</span>
+      </h2>
+
+
+      <div class="card future-card">
+
+        <h3>
+          My Learning Journey
+        </h3>
+
+        <p>
+
+          My goal is to continuously learn new
+          technologies, develop practical projects,
+          improve my technical knowledge and build
+          strong skills throughout my engineering journey.
+
+          I want to explore new areas of Computer Science
+          and create useful projects in the future.
+
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section id="contact">
+
+      <h2 class="section-title">
+        Get In <span>Touch</span>
+      </h2>
+
+
+      <div class="card contact-card">
+
+
+        <!-- EMAIL -->
+
+        <div class="contact-item">
+
+          <div class="contact-icon">
+            ✉
+          </div>
+
+          <a href="mailto:nikhilvinitha2009@gmail.com">
+
+            nikhilvinitha2009@gmail.com
+
+          </a>
+
+        </div>
+
+
+        <!-- PHONE -->
+
+        <div class="contact-item">
+
+          <div class="contact-icon">
+            ☎
+          </div>
+
+          <a href="tel:7200656720">
+
+            7200656720
+
+          </a>
+
+        </div>
+
+
+        <!-- GITHUB -->
+
+        <div class="contact-item">
+
+          <div class="contact-icon">
+            ◉
+          </div>
+
+          <a
+            href="https://github.com/"
+            target="_blank">
+
+            GitHub
+
+          </a>
+
+        </div>
+
+
+        <!-- LINKEDIN -->
+
+        <div class="contact-item">
+
+          <div class="contact-icon">
+            in
+          </div>
+
+          <a
+            href="https://www.linkedin.com/"
+            target="_blank">
+
+            LinkedIn
+
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    © 2026
+    <span>Nikhil C</span>.
+    All rights reserved.
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    const menuButton =
+      document.getElementById("menuButton");
+
+    const navLinks =
+      document.getElementById("navLinks");
+
+
+    menuButton.addEventListener("click", function () {
+
+      navLinks.classList.toggle("active");
+
+    });
+
+
+    // Close mobile menu after clicking a link
+
+    document
+      .querySelectorAll(".nav-links a")
+      .forEach(function(link) {
+
+        link.addEventListener("click", function() {
+
+          navLinks.classList.remove("active");
+
+        });
+
+      });
+
+  </script>
+
+</body>
+</html>
